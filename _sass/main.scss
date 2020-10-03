@@ -40,6 +40,10 @@ $font-family: "Roboto", sans-serif;
     display: inline-block;
     margin-right: 15px;
   }
+
+  &__link--active {
+    font-weight: bold;
+  }
 }
 
 .discord {

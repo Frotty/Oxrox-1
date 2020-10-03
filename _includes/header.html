@@ -1,24 +1,31 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="/index.html" class="logo__link header__link">
-                <img src="/assets/img/logo.png" alt="logo">
+            <a href="index.html" class="logo__link header__link">
+                <img src="assets/img/logo.png" alt="logo">
             </a>
         </div>
         <ul class="nav">
-            <li class="nav__item"><a href="/download.html"
-                    class="header__link">Download</a>
+
+            <li class="nav__item"><a href="download.html"
+                    {% if page.url == "/download.html" %}
+                    class="nav__link--active header__link" {% else %}
+                    class="header__link" {% endif %}>Download</a>
             </li>
-            <li class="nav__item"><a href="/changelog.html"
-                    class="header__link">Changelog</a>
+            <li class="nav__item"><a href="changelog.html"
+                    {% if page.url == "/changelog.html" %}
+                    class="nav__link--active header__link" {% else %}
+                    class="header__link" {% endif %}>Changelog</a>
             </li>
-            <li class="nav__item"><a href="/contact.html"
-                    class="header__link">Contact</a></li>
+            <li class="nav__item"><a href="contact.html"
+                    {% if page.url == "/contact.html" %}
+                    class="nav__link--active header__link" {% else %}
+                    class="header__link" {% endif %}>Contact</a></li>
         </ul>
         <div class="discord">
             <a href="https://discord.gg/uFkDMp9" target="blank"
                 class="discord__link header__link">Join us<img
-                    src="/assets/img/discord-logo.png" alt="discord logo"
+                    src="assets/img/discord-logo.png" alt="discord logo"
                     class="discord__img"></a>
         </div>
 </header>
