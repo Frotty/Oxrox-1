@@ -1,16 +1,13 @@
 $base-color1: #121821;
-$font-family: "Roboto", sans-serif;
+$tile-color: adjust-color($base-color1, $alpha: -0.35);
+$main-font: "Roboto", sans-serif;
+$sub-font: "Poppins", sans-serif;
 
-// General
-* {
-  box-sizing: border-box;
-}
-
-// Header 
+// Header
 .header {
   padding: 15px 0;
   background-color: $base-color1;
-  font-family: $font-family;
+  font-family: $main-font;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -18,7 +15,7 @@ $font-family: "Roboto", sans-serif;
 
   &__link {
     text-decoration: none;
-    color: #BDCCD3;
+    color: #bdccd3;
   }
 }
 
@@ -60,13 +57,107 @@ $font-family: "Roboto", sans-serif;
 }
 
 // Main
-.container {
+.main {
+  background: repeat url("../img/bg_tile2.png");
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+}
+
+.trailer {
+  padding: 80px;
+  background: center url("../img/bg_trailer.png");
+}
+
+.hero {
+  margin-top: 55px;
+  padding: 0 34px 10px;
+  background-color: $tile-color;
+  text-align: center;
+
+  &__title {
+    font-family: $sub-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 96px;
+  }
+
+  &__text {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+.card-container {
+  margin-top: 50px;
   display: flex;
-  align-items: center;
-  padding: 0 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin-bottom: 35px;
+  display: flex;
+  width: 100%;
+
+  &__title {
+    font-family: $sub-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+  }
+
+  &__img {
+    flex-basis: 40%;
+  }
+
+  &__description {
+    padding: 0 55px;
+    flex-basis: 60%;
+    background-color: $tile-color;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__tiles {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.card-tile {
+  flex-basis: 33%;
+
+  &__img {
+    display: block;
+    margin: auto;
+  }
+
+  &__description {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+  }
 }
 
 // Footer
 .footer {
+  padding: 15px 0;
   background-color: $base-color1;
+  color: #bdccd3;
 }
