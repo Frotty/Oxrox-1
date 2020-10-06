@@ -58,6 +58,7 @@ $sub-font: "Poppins", sans-serif;
 
 // Main
 .main {
+  padding-bottom: 50px;
   background: repeat url("../img/bg_tile2.png");
   font-family: $main-font;
   font-style: normal;
@@ -68,8 +69,22 @@ $sub-font: "Poppins", sans-serif;
 }
 
 .trailer {
-  padding: 80px;
+  padding: 40px 0;
   background: center url("../img/bg_trailer.png");
+
+  &__wrapper {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .hero {
@@ -96,16 +111,11 @@ $sub-font: "Poppins", sans-serif;
 }
 
 .card-container {
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  margin-top: 55px;
 }
 
 .card {
-  margin-bottom: 35px;
-  display: flex;
-  width: 100%;
+  margin-top: 30px;
 
   &__title {
     font-family: $sub-font;
@@ -116,13 +126,7 @@ $sub-font: "Poppins", sans-serif;
     text-align: center;
   }
 
-  &__img {
-    flex-basis: 40%;
-  }
-
-  &__description {
-    padding: 0 55px;
-    flex-basis: 60%;
+  &__description-block {
     background-color: $tile-color;
     font-family: $main-font;
     font-style: normal;
@@ -131,14 +135,13 @@ $sub-font: "Poppins", sans-serif;
     line-height: 28px;
   }
 
-  &__tiles {
-    display: flex;
-    flex-wrap: wrap;
+  &__description {
+    padding: 0 30px 30px;
   }
 }
 
 .card-tile {
-  flex-basis: 33%;
+  padding-top: 5px;
 
   &__img {
     display: block;
