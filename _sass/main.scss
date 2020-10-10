@@ -5,55 +5,63 @@ $sub-font: "Poppins", sans-serif;
 
 // Header
 .header {
-  padding: 15px 0;
+  padding: 5px 0;
   background-color: $base-color1;
+
   font-family: $main-font;
-  font-style: normal;
-  font-weight: normal;
   font-size: 24px;
   line-height: 28px;
-
-  &__link {
-    text-decoration: none;
-    color: #bdccd3;
-  }
 }
 
 .logo {
-  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 
-  &__link {
-    display: flex;
-    align-items: center;
-  }
+  font-family: $sub-font;
+  font-weight: bold;
+  line-height: 36px;
+  color: #bdccd3;
 }
 
 .nav {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+  display: flex;
+  align-items: center;
+
+  &__toggle {
+    margin-left: 5px;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__links {
+    margin: 0 0 0 15px;
+    padding: 0;
+    list-style-type: none;
+  }
 
   &__item {
     display: inline-block;
     margin-right: 15px;
   }
 
-  &__link--active {
-    font-weight: bold;
+  &__link {
+    text-decoration: none;
+    color: #bdccd3;
+
+    &----active {
+      font-weight: bold;
+    }
   }
 }
 
 .discord {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 
-  &__link {
-    display: flex;
-    align-items: center;
-  }
-
-  &__img {
-    margin-left: 5px;
-  }
+  color: #bdccd3;
 }
 
 // Main
@@ -69,8 +77,9 @@ $sub-font: "Poppins", sans-serif;
 }
 
 .trailer {
-  padding: 40px 0;
+  padding: 40px 40px;
   background: center url("../img/bg_trailer.png");
+  background-size: cover;
 
   &__wrapper {
     position: relative;
@@ -115,7 +124,7 @@ $sub-font: "Poppins", sans-serif;
 }
 
 .card {
-  margin-top: 30px;
+  margin-top: 40px;
 
   &__title {
     font-family: $sub-font;
@@ -127,6 +136,7 @@ $sub-font: "Poppins", sans-serif;
   }
 
   &__description-block {
+    padding: 10px;
     background-color: $tile-color;
     font-family: $main-font;
     font-style: normal;
@@ -163,4 +173,31 @@ $sub-font: "Poppins", sans-serif;
   padding: 15px 0;
   background-color: $base-color1;
   color: #bdccd3;
+}
+
+// Media
+@media screen and (max-width: 768px) {
+  .nav .nav__item {
+    display: none;
+  }
+
+  .nav.opened {
+    .nav__wrapper {
+      position: relative;
+    }
+
+    .nav__links {
+      background-color: $base-color1;
+      padding: 10px 10px 10px 10px;
+      position: absolute;
+      top: 24px;
+      left: -68px;
+      z-index: 1;
+    }
+
+    .nav__item {
+      padding: 10px;
+      display: block;
+    }
+  }
 }
