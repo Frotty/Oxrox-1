@@ -176,28 +176,28 @@ $sub-font: "Poppins", sans-serif;
 }
 
 // Media
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .nav .nav__item {
     display: none;
   }
 
   .nav.opened {
-    .nav__wrapper {
-      position: relative;
-    }
-
     .nav__links {
-      background-color: $base-color1;
-      padding: 10px 10px 10px 10px;
+      margin: 0;
+      width: 100%;
       position: absolute;
-      top: 24px;
-      left: -68px;
+      top: 58px;
+      left: 0;
       z-index: 1;
+      background-color: $base-color1;
     }
 
     .nav__item {
+      margin-left: auto;
+      margin-right: auto;
       padding: 10px;
       display: block;
+      text-align: center;
     }
   }
 }
