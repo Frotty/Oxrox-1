@@ -1,3 +1,4 @@
+// Footer menu toggle
 const nav = document.getElementById("nav");
 const navToggle = nav.querySelector(".nav__toggle");
 
@@ -18,3 +19,18 @@ navToggle.addEventListener("click", () => {
     openMobileNavbar();
   }
 });
+
+// Collapse
+var coll = document.getElementsByClassName("collapse");
+
+for (var i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
