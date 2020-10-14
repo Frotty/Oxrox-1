@@ -3,11 +3,13 @@ title: OxRox • Changelog
 layout: default
 ---
 
-<div class="container">
+<div class="main">
+  <div class="container">
 
-
-
-
-
-
+    {% for post in site.posts %}
+    <div class="content">
+      {{ post.content }}
+    </div>
+    {% endfor %}
+  </div>
 </div>
