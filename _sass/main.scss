@@ -238,6 +238,7 @@ body {
     margin-top: 10px;
     padding: 10px;
     background: $base-color2;
+    border: 0;
     border-radius: 6px;
     font-size: 14px;
     color: #ffffff;
@@ -287,6 +288,67 @@ body {
   &:hover {
     cursor: pointer;
     text-decoration: none;
+  }
+}
+
+// Contact
+.socials {
+  padding: 10px;
+  background-color: $tile-color1;
+
+  &__icon-cell {
+    width: 150px;
+    text-align: center;
+  }
+
+  &__description-cell {
+    padding-left: 5px;
+    font-size: 36px;
+    text-align: left;
+  }
+}
+
+.contact-form {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: $tile-color1;
+
+  &__title {
+    font-size: 32px;
+    font-weight: normal;
+  }
+
+  &__description {
+    margin-top: 10px;
+  }
+
+  &__group {
+    margin-top: 20px;
+  }
+
+  &__field-name {
+    display: block;
+    font-size: 16px;
+  }
+
+  &__field {
+    padding: 4px 8px;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  &__submit {
+    margin-top: 15px;
+    padding: 10px;
+    background: $base-color2;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #ffffff;
+    border: 0;
+
+    &:hover {
+      background-color: darken($base-color2, 10);
+    }
   }
 }
 
