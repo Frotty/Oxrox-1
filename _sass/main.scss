@@ -20,7 +20,7 @@ body {
 
 // Header
 .header {
-  padding: 5px 0;
+  padding: 15px 0;
   background-color: $base-color1;
 
   font-family: $main-font;
@@ -195,6 +195,7 @@ body {
   display: table;
   margin: auto;
   padding: 5px;
+  border-radius: 5px;
   background-color: $tile-color2;
   text-align: center;
 }
@@ -261,6 +262,22 @@ body {
     transition: max-height 0.2s ease-out;
     font-size: 16px;
     text-align: justify;
+  }
+}
+
+.sys-req {
+  display: table;
+  margin: 20px auto 0;
+  padding: 20px 0;
+  background-color: $tile-color1;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__description {
+    margin-top: 10px;
+    padding: 0 100px 0 20px;
   }
 }
 
