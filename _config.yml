@@ -32,6 +32,8 @@ discord: https://discord.gg/uFkDMp9
 
 # Build settings
 theme: minima
+collections:
+  - changelog
 plugins:
   - jekyll-feed
 # Exclude from processing.

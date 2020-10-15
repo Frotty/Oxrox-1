@@ -291,6 +291,43 @@ body {
   }
 }
 
+// Changelog
+.changelog-item {
+  &__header {
+    display: table;
+    padding: 5px;
+    border-radius: 4px 4px 0 0;
+    background-color: $tile-color2;
+  }
+
+  &__version {
+    font-size: 24px;
+  }
+
+  &__date {
+    font-size: 18px;
+    font-style: italic;
+    color: #bdccd3;
+  }
+
+  ul {
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: $tile-color1;
+    list-style-type: none;
+    font-size: 16px;
+    color: #bdccd3;
+  }
+
+  li {
+    margin-bottom: 6px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 // Contact
 .socials {
   padding: 10px;
@@ -430,5 +467,30 @@ body {
       font-size: 24px;
       line-height: 1.2;
     }
+  }
+}
+
+// Components
+.badge {
+  display: inline-block;
+  width: 75px;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  &-added {
+    background-color: #29721d;
+  }
+  &-improved {
+    background-color: #284652;
+  }
+  &-fixed {
+    background-color: #346fa0;
+  }
+  &-hotfix {
+    background-color: #afa148;
   }
 }

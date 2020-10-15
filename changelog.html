@@ -3,12 +3,26 @@ title: OxRox • Changelog
 layout: default
 ---
 
-<div class="main">
-  <div class="container">
+{% assign changelog = site.changelog | sort: "date" | reverse %}
 
-    {% for post in site.posts %}
-    <div class="content">
-      {{ post.content }}
+<div class="main">
+  <div class="page-title">
+    <h2 class="page-title__title">Changelog</h2>
+    <hr class="page-title__decor-line">
+  </div>
+
+  <div class="container">
+    {% for changelog-item in changelog %}
+    <div class="changelog-item">
+      <div class="changelog-item__header">
+        <div class="changelog-item__version">
+          {{ changelog-item.version }}
+        </div>
+        <div class="changelog-item__date">
+          published {{ changelog-item.date | date: "%d.%m.%Y"}}
+        </div>
+      </div>
+      {{ changelog-item.content }}
     </div>
     {% endfor %}
   </div>
