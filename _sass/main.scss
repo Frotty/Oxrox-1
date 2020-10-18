@@ -1,7 +1,7 @@
 $base-color1: #121821;
 $base-color2: #346fa0;
 $base-color3: #3d596c;
-$tile-color1: adjust-color($base-color1, $alpha: -0.35);
+$tile-color1: adjust-color($base-color1, $alpha: -0.2);
 $tile-color2: adjust-color($base-color2, $alpha: -0.35);
 $tile-color3: adjust-color($base-color3, $alpha: -0.5);
 $main-font: "Roboto", sans-serif;
@@ -18,25 +18,36 @@ body {
   flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+  color: #bdccd3;
+
+  &:hover {
+    text-decoration: none;
+    color: #bdccd3;
+  }
+}
+
 // Header
 .header {
   padding: 15px 0;
   background-color: $base-color1;
-
   font-family: $main-font;
   font-size: 24px;
-  line-height: 28px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
 
   font-family: $sub-font;
   font-weight: bold;
-  line-height: 36px;
-  color: #bdccd3;
+
+  &__img {
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
+  }
 }
 
 .nav {
@@ -61,55 +72,46 @@ body {
   }
 
   &__link {
-    text-decoration: none;
-    color: #bdccd3;
-
-    &----active {
+    &--active {
       font-weight: bold;
+    }
+
+    &:hover:not(&--active) {
+      color: lighten(#bdccd3, 10);
     }
   }
 }
 
 .discord {
-  margin-left: auto;
   display: flex;
   align-items: center;
-  text-decoration: none;
-
-  color: #bdccd3;
+  margin-left: auto;
 }
 
 // Main
 .main {
   flex: 1 0 auto;
-
   padding-bottom: 50px;
   background: repeat url("../img/bg_tile2.png");
-
   font-family: $main-font;
   font-size: 24px;
-  line-height: 1.2;
   color: #ffffff;
 }
 
 .page-title {
-  font-family: $main-font;
-
+  margin: 0;
   font-size: 64px;
+  font-weight: normal;
   line-height: 1.2;
   text-align: center;
-
   color: #ffefef;
 
-  &__title {
-    font-size: 1em;
-    margin: 0;
-    font-weight: normal;
-  }
-
-  &__decor-line {
-    margin: 0 auto 20px;
-    width: 2em;
+  &::after {
+    display: block;
+    width: 1.5em;
+    margin: 5px auto 20px;
+    content: "";
+    border-bottom: 1px solid #ffefef;
   }
 }
 
@@ -150,6 +152,11 @@ body {
     font-size: 36px;
     line-height: 42px;
   }
+}
+
+.rox-creators {
+  color: #4a66fa;
+  text-decoration: underline;
 }
 
 .card-container {
@@ -197,7 +204,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   background-color: $tile-color2;
-  text-align: center;
+  text-align: left;
 }
 
 .download-container {
@@ -234,20 +241,7 @@ body {
   }
 
   &__button {
-    display: inline-block;
     margin-top: 10px;
-    padding: 10px;
-    background: $base-color2;
-    border: 0;
-    border-radius: 6px;
-    font-size: 14px;
-    color: #ffffff;
-
-    &:hover {
-      background-color: darken($base-color2, 10);
-      text-decoration: none;
-      color: #ffffff;
-    }
   }
 
   &__description {
@@ -274,11 +268,12 @@ body {
 
   &__title {
     text-align: center;
+    font-weight: normal;
   }
 
   &__description {
     margin-top: 10px;
-    padding: 0 100px 0 20px;
+    padding-right: 20px;
   }
 }
 
@@ -310,20 +305,30 @@ body {
     color: #bdccd3;
   }
 
-  ul {
+  table {
+    width: 100%;
     margin-bottom: 15px;
-    padding: 8px;
+    padding: 5px;
     background-color: $tile-color1;
-    list-style-type: none;
+    border-collapse: separate;
     font-size: 16px;
     color: #bdccd3;
-  }
 
-  li {
-    margin-bottom: 6px;
+    tr {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+    }
 
-    &:last-child {
-      margin-bottom: 0;
+    td {
+      display: inline-block;
+
+      &:first-child {
+        align-self: baseline;
+        margin-right: 5px;
+        text-align: center;
+        vertical-align: top;
+      }
     }
   }
 }
@@ -342,6 +347,16 @@ body {
     padding-left: 5px;
     font-size: 36px;
     text-align: left;
+  }
+
+  &__link {
+    color: #8c9eff;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken(#8c9eff, 12);
+      text-decoration: underline;
+    }
   }
 }
 
@@ -369,23 +384,9 @@ body {
   }
 
   &__field {
-    padding: 4px 8px;
     width: 100%;
+    padding: 4px 8px;
     border-radius: 5px;
-  }
-
-  &__submit {
-    margin-top: 15px;
-    padding: 10px;
-    background: $base-color2;
-    border-radius: 6px;
-    font-size: 14px;
-    color: #ffffff;
-    border: 0;
-
-    &:hover {
-      background-color: darken($base-color2, 10);
-    }
   }
 }
 
@@ -422,27 +423,28 @@ body {
 
   .nav.opened {
     .nav__links {
-      margin: 0;
-      width: 100%;
       position: absolute;
-      top: 58px;
+      top: 78px; // header-height
       left: 0;
       z-index: 1;
+
+      width: 100%;
+      margin: 0;
       background-color: $base-color1;
     }
 
     .nav__item {
+      display: block;
       margin-left: auto;
       margin-right: auto;
       padding: 10px;
-      display: block;
       text-align: center;
     }
   }
 
   // Main
-  .download-warning {
-    font-size: 14px;
+  .page-title {
+    font-size: 46px;
   }
 
   .trailer {
@@ -468,12 +470,51 @@ body {
       line-height: 1.2;
     }
   }
+
+  // Download
+  .download-warning {
+    font-size: 14px;
+  }
+
+  .sys-req {
+    font-size: 16px;
+  }
+
+  // Contact
+  .socials {
+    &__description-cell {
+      font-size: 24px;
+    }
+  }
 }
 
 // Components
+.button {
+  display: inline-block;
+  padding: 10px;
+  background: $base-color2;
+  border-radius: 6px;
+  border: 0;
+  font-size: 14px;
+  color: #ffffff;
+
+  &:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  &-blue {
+    background: $base-color2;
+
+    &:hover {
+      background-color: darken($base-color2, 10);
+    }
+  }
+}
+
 .badge {
   display: inline-block;
-  width: 75px;
+  width: 80px;
   padding: 5px 0;
   border-radius: 6px;
   font-size: 14px;
@@ -484,13 +525,21 @@ body {
   &-added {
     background-color: #29721d;
   }
+
   &-improved {
     background-color: #284652;
   }
+
   &-fixed {
     background-color: #346fa0;
   }
+
   &-hotfix {
     background-color: #afa148;
   }
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }

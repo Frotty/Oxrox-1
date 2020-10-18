@@ -6,10 +6,7 @@ layout: default
 {% assign changelog = site.changelog | sort: "date" | reverse %}
 
 <div class="main">
-  <div class="page-title">
-    <h2 class="page-title__title">Changelog</h2>
-    <hr class="page-title__decor-line">
-  </div>
+  <h2 class="page-title">Changelog</h2>
 
   <div class="container">
     {% for changelog-item in changelog %}
