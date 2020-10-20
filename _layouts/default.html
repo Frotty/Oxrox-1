@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }}</title>
+    <meta name="description" content="OxRox is a modern remake of the game RoX by Safrosoft, a boulder dash clone.
+        The goal is not to be a carbon copy, but recreate the game faithfully in
+        our own way, including a few changes and additions along the way">
+    <meta name="keywords" content="Oxrox, puzzle, game">
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
       rel="stylesheet">
@@ -19,12 +24,13 @@
     <link rel="icon" type="image/png" sizes="16x16"
       href="assets/img/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/img/favicon/site.webmanifest">
-    <title>{{ page.title }}</title>
   </head>
 
   <body>
     {% include header.html %}
-    {{ content }}
+    <div class="main">
+      {{ content }}
+    </div>
     {% include footer.html %}
     <script src="assets/js/index.js"></script>
   </body>

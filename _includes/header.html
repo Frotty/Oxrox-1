@@ -1,35 +1,37 @@
 <header class="header">
     <nav id="nav" class="nav container">
         <a href="/Oxrox/" class="logo">
-            <img src="assets/img/logo.png" alt="" class="logo__img">
+            <img src="assets/img/logo.png" alt="" width="38px"
+                class="logo__img">
             OxRox
         </a>
 
         <button type="button" class="nav__toggle d-inline-block d-md-none"
             aria-label="Open navigation menu">
-            <img src="assets/img/menu.svg" alt="">
+            <span class="nav__menu"></span>
+            <!-- <img src="assets/img/menu.svg" alt=""> -->
         </button>
 
         <ul class="nav__links">
-            <li class="nav__item"><a href="download.html"
+            <li class="nav__item"><a href="download.html" title="Download"
                     {% if page.url == "/download.html" %}
                     class="nav__link nav__link--active" {% else %}
                     class="nav__link link" {% endif %}>Download</a>
             </li>
-            <li class="nav__item"><a href="changelog.html"
+            <li class="nav__item"><a href="changelog.html" title="Changelog"
                     {% if page.url == "/changelog.html" %}
                     class="nav__link nav__link--active" {% else %}
                     class="nav__link link" {% endif %}>Changelog</a>
             </li>
-            <li class="nav__item"><a href="contact.html"
+            <li class="nav__item"><a href="contact.html" title="Contact"
                     {% if page.url == "/contact.html" %}
                     class="nav__link nav__link--active" {% else %}
                     class="nav__link link" {% endif %}>Contact</a>
             </li>
         </ul>
 
-        <a href="{{ site.discord }}" target="_blank" class="discord"><span
-                class="d-none d-md-block">Join
+        <a href="{{ site.discord }}" target="_blank" rel="noopener"
+            class="discord"><span class="d-none d-md-block">Join
                 us</span><img src="assets/img/discord-logo.svg" alt=""></a>
     </nav>
 </header>

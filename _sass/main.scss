@@ -1,7 +1,7 @@
 $base-color1: #121821;
 $base-color2: #346fa0;
 $base-color3: #3d596c;
-$tile-color1: adjust-color($base-color1, $alpha: -0.2);
+$tile-color1: adjust-color($base-color1, $alpha: -0.35);
 $tile-color2: adjust-color($base-color2, $alpha: -0.35);
 $tile-color3: adjust-color($base-color3, $alpha: -0.5);
 $main-font: "Roboto", sans-serif;
@@ -44,8 +44,6 @@ a {
   font-weight: bold;
 
   &__img {
-    width: 36px;
-    height: 36px;
     margin-right: 5px;
   }
 }
@@ -55,9 +53,43 @@ a {
   align-items: center;
 
   &__toggle {
-    margin-left: 5px;
+    width: 28px;
+    height: 30px;
+    margin-left: 10px;
+    padding: 0;
     border: none;
     background-color: transparent;
+  }
+
+  &__menu {
+    $menu-color: #bdccd3;
+
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 18px;
+    height: 2px;
+    background-color: $menu-color;
+
+    &::before {
+      position: absolute;
+      top: -6px;
+      left: 0;
+      content: "";
+      width: 18px;
+      height: 2px;
+      background: $menu-color;
+    }
+
+    &::after {
+      position: absolute;
+      top: 6px;
+      left: 0;
+      content: "";
+      width: 18px;
+      height: 2px;
+      background: $menu-color;
+    }
   }
 
   &__links {
@@ -79,6 +111,15 @@ a {
     &:hover:not(&--active) {
       color: lighten(#bdccd3, 10);
     }
+
+    &::before {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
   }
 }
 
@@ -86,6 +127,10 @@ a {
   display: flex;
   align-items: center;
   margin-left: auto;
+
+  &:hover {
+    color: lighten(#bdccd3, 10);
+  }
 }
 
 // Main
@@ -132,6 +177,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
+    border: 0;
   }
 }
 
@@ -139,13 +185,13 @@ a {
   margin-top: 55px;
   padding: 0 34px 10px;
   background-color: $tile-color1;
+  backdrop-filter: blur(2px);
   text-align: center;
 
   &__title {
     font-family: $sub-font;
     font-weight: 600;
     font-size: 64px;
-    line-height: 96px;
   }
 
   &__text {
@@ -170,13 +216,13 @@ a {
     font-family: $sub-font;
     font-weight: 600;
     font-size: 48px;
-    line-height: 72px;
     text-align: center;
   }
 
   &__description-block {
     padding: 10px;
     background-color: $tile-color1;
+    backdrop-filter: blur(2px);
   }
 
   &__description {
@@ -201,7 +247,7 @@ a {
 .download-warning {
   display: table;
   margin: auto;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   background-color: $tile-color2;
   text-align: left;
@@ -211,6 +257,7 @@ a {
   margin-top: 20px;
   padding: 35px 45px 40px;
   background-color: $tile-color1;
+  backdrop-filter: blur(2px);
 }
 
 .download-item {
@@ -265,6 +312,7 @@ a {
   margin: 20px auto 0;
   padding: 20px 0;
   background-color: $tile-color1;
+  backdrop-filter: blur(2px);
 
   &__title {
     text-align: center;
@@ -310,6 +358,7 @@ a {
     margin-bottom: 15px;
     padding: 5px;
     background-color: $tile-color1;
+    backdrop-filter: blur(2px);
     border-collapse: separate;
     font-size: 16px;
     color: #bdccd3;
@@ -337,6 +386,7 @@ a {
 .socials {
   padding: 10px;
   background-color: $tile-color1;
+  backdrop-filter: blur(2px);
 
   &__icon-cell {
     width: 150px;
@@ -364,6 +414,7 @@ a {
   margin-top: 20px;
   padding: 20px;
   background-color: $tile-color1;
+  backdrop-filter: blur(2px);
 
   &__title {
     font-size: 32px;
@@ -396,6 +447,14 @@ a {
   padding: 15px 0;
   background-color: $base-color1;
   color: #bdccd3;
+
+  &__link {
+    color: #8c9eff;
+
+    &:hover {
+      color: darken(#8c9eff, 12);
+    }
+  }
 }
 
 // Media
@@ -431,6 +490,7 @@ a {
       width: 100%;
       margin: 0;
       background-color: $base-color1;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
     .nav__item {
@@ -453,21 +513,14 @@ a {
 
   .hero {
     margin-top: 20px;
-    padding: 0 34px 10px;
-    background-color: $tile-color1;
-    text-align: center;
+    backdrop-filter: blur(2px);
 
     &__title {
-      font-family: $sub-font;
-      font-weight: 600;
       font-size: 40px;
-      line-height: 1.2;
     }
 
     &__text {
-      font-family: $main-font;
       font-size: 24px;
-      line-height: 1.2;
     }
   }
 
