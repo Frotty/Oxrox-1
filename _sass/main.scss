@@ -223,6 +223,10 @@ a {
     text-align: center;
   }
 
+  &__img {
+    object-fit: cover;
+  }
+
   &__description-block {
     padding: 0.5em;
     background-color: $tile-color1;
