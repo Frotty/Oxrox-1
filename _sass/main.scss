@@ -185,12 +185,13 @@ a {
 
 .hero {
   margin-top: 55px;
-  padding: 0 34px 10px;
+
   background-color: $tile-color1;
   backdrop-filter: blur(2px);
   text-align: center;
 
   &__title {
+    padding: 0 0.5em;
     font-family: $sub-font;
     font-weight: 600;
     font-size: 64px;
@@ -198,7 +199,7 @@ a {
 
   &__text {
     font-size: 36px;
-    line-height: 42px;
+    padding: 0 1em 1em;
   }
 }
 
@@ -208,13 +209,14 @@ a {
 }
 
 .card-container {
-  margin-top: 55px;
+  margin-top: 2em;
 }
 
 .card {
-  margin-top: 40px;
+  margin-top: 20px;
 
   &__title {
+    padding: 0 0.5em;
     font-family: $sub-font;
     font-weight: 600;
     font-size: 48px;
@@ -222,13 +224,13 @@ a {
   }
 
   &__description-block {
-    padding: 10px;
+    padding: 0.5em;
     background-color: $tile-color1;
     backdrop-filter: blur(2px);
   }
 
   &__description {
-    padding: 0 30px 30px;
+    padding: 0 1.5em;
   }
 }
 
@@ -443,6 +445,14 @@ a {
   }
 }
 
+// Disclaimer
+.disclaimer-container {
+  padding: 0.5em 1em;
+  background-color: $tile-color1;
+  backdrop-filter: blur(2px);
+  color: white;
+}
+
 // Footer
 .footer {
   margin-top: auto;
@@ -527,11 +537,21 @@ a {
     backdrop-filter: blur(2px);
 
     &__title {
-      font-size: 40px;
+      font-size: 36px;
     }
 
     &__text {
-      font-size: 24px;
+      font-size: 16px;
+    }
+  }
+
+  .card {
+    &__title {
+      font-size: 36px;
+    }
+
+    &__description-block {
+      font-size: 16px;
     }
   }
 

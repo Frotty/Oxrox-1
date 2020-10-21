@@ -1,12 +1,8 @@
 ---
 title: OxRox • Disclaimer
+header: Disclaimer
 layout: default
 ---
-
-<!-- <div class="container"> -->
-  <!-- <div class="row"> -->
-
-# Disclaimer
 
 If you require any more information or have any questions about our site's disclaimer, please feel free to contact us by email at fatoxgames@mailbox.org
 
@@ -25,6 +21,3 @@ By using our website, you hereby consent to our disclaimer and agree to its term
 #### Update
 
 Should we update, amend or make any changes to this document, those changes will be prominently posted here.
-
-  <!-- </div> -->
-<!-- </div> -->

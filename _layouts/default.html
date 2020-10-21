@@ -29,7 +29,23 @@
   <body>
     {% include header.html %}
     <div class="main">
+      {%- if page.header != null -%}
+      <h2 class="page-title">{{ page.header }}</h2>
+      {%- endif -%}
+
+      {%- assign containerClass = "container" -%}
+
+      {%- if page.name == "disclaimer.md" -%}
+      {%- assign containerClass = containerClass | append: " disclaimer-container" -%}
+      {%- endif -%}
+
+      {%- if page.inContainer or page.inContainer == null -%}
+      <div class="{{ containerClass }}">
+        {{ content }}
+      </div>
+      {%- else -%}
       {{ content }}
+      {%- endif -%}
     </div>
     {% include footer.html %}
     <script src="assets/js/index.js"></script>
