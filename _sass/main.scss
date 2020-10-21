@@ -273,7 +273,6 @@ a {
 
   font-family: $main-font;
   font-size: 24px;
-  line-height: 1.2;
   text-align: center;
   color: #ffffff;
 
@@ -297,7 +296,7 @@ a {
 
   &__description {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 0.5em;
     font-size: 16px;
   }
 
